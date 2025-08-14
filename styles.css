@@ -1,0 +1,294 @@
+/* GLOBAL BEST PRACTICE */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* --- Comic-Book Color Palette and Variables --- */
+:root {
+  /* Default (Light Mode) Colors */
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --text-color: #000;
+  --link-color: #4CAF50; /* A vibrant green */
+  --accent-color: #FFC107; /* A bright yellow */
+  --comic-border-color: #000;
+  --comic-shadow-color: #333;
+  --footer-bg: #222;
+  --footer-text-color: #fff;
+  --footer-border: #444;
+}
+
+/* Dark Mode Colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #fff;
+    --secondary-color: #000;
+    --text-color: #fff;
+    --link-color: #8BC34A; /* A bright green for contrast */
+    --accent-color: #FFEB3B; /* A bright yellow for contrast */
+    --comic-border-color: #fff;
+    --comic-shadow-color: #ccc;
+    --footer-bg: #111;
+    --footer-text-color: #fff;
+    --footer-border: #555;
+  }
+}
+
+/* Header & Navbar */
+.header-logo a svg,
+.header-logo a span {
+  color: var(--primary-color) !important;
+  stroke: var(--primary-color) !important;
+  transition: color 0.5s ease-in-out, stroke 0.5s ease-in-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* --- Comic-Like Masonry Gallery Layout --- */
+.masonry-container {
+  column-count: 1;
+  column-gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+@media (min-width: 640px) {
+  .masonry-container {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-container {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+  /* Exaggerated, solid comic border and shadow */
+  border: 4px solid var(--comic-border-color);
+  border-radius: 0.25rem; /* Sharper corners for a flatter look */
+  box-shadow: 8px 8px 0px var(--comic-shadow-color);
+  /* Subtle random rotation for a hand-drawn feel */
+  transform: scale(1) rotate(calc(var(--rotation, 0) * 1deg));
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.3s ease-in-out;
+}
+
+/* Different rotations for each column item to create variety */
+.masonry-item:nth-child(2n) { --rotation: -1; }
+.masonry-item:nth-child(3n) { --rotation: 2; }
+.masonry-item:nth-child(5n) { --rotation: -2; }
+.masonry-item:nth-child(7n) { --rotation: 1; }
+
+.masonry-item:hover {
+  /* Scales up and straightens the image, as if it's popping out */
+  transform: scale(1.05) rotate(0deg);
+  /* Even more dramatic, hard shadow on hover */
+  box-shadow: 12px 12px 0px var(--comic-shadow-color);
+  z-index: 10;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- FOOTER SECTION - UNIFIED FOR ALL THEMES --- */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text-color);
+  padding: 4rem 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  font-family: 'Freeman', sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+  padding: 0 4rem;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  text-align: left;
+  color: var(--footer-text-color);
+}
+
+.footer-section:first-child,
+.footer-section:last-child {
+  margin: 0;
+}
+
+.footer-logo {
+  font-family: 'Big Shoulders Inline Display', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--footer-text-color);
+  text-decoration: none;
+}
+
+.footer-logo svg {
+  width: 48px !important;
+  height: 48px !important;
+  stroke: var(--footer-text-color) !important;
+}
+
+.footer-logo span {
+  color: #11ff00 !important;
+  font-size: 2rem !important;
+  font-family: 'Freeman', sans-serif !important;
+}
+
+.footer-links,
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.social-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: var(--footer-text-color);
+  text-decoration: none;
+  font-family: 'Freeman', sans-serif;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover, .social-links a:hover {
+  color: #0042d7 !important;
+}
+
+.social-links a {
+  color: var(--footer-text-color);
+  text-decoration: none;
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.social-links a i {
+  margin-right: 0.5rem;
+}
+
+.social-links a:hover {
+  color: var(--link-color);
+  transform: scale(1.2);
+}
+
+.footer-section p {
+  font-family: 'Freeman', sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: var(--footer-text-color);
+}
+
+.footer-heading {
+  font-size: 1.5rem;
+  color: var(--footer-text-color);
+}
+
+.copyright {
+  text-align: center;
+  color: var(--footer-text-color);
+  font-size: 1rem;
+  padding-top: 2rem;
+  /* Thick border for a comic feel */
+  border-top: 2px solid var(--footer-border);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 20px 0 20px;
+}
+
+/* Responsive layout fix */
+@media screen and (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  .footer-section {
+    text-align: center;
+    min-width: unset;
+    align-items: center;
+  }
+  .footer-logo a {
+    justify-content: center;
+  }
+  .footer-links,
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .footer-links li,
+  .social-links li {
+    margin: 0;
+  }
+}
+
+/* --- UTILITY CLASSES --- */
+.heart-emoji {
+  display: inline-block;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.clara {
+  font-family: 'Freeman', sans-serif !important;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #11ff00;
+  margin-left: 4px;
+  font-family: 'Sofia', cursive;
+}
+
+.text-color {
+  color: var(--text-color) !important;
+}
