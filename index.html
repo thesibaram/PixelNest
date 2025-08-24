@@ -266,34 +266,32 @@
               galleryItem.appendChild(reactionContainer);
 
               // Add event listeners for the new buttons
-reactionContainer.querySelectorAll('.reaction-button').forEach(button => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevents the fancybox from opening
-    const reaction = event.currentTarget.dataset.reaction;
+              reactionContainer.querySelectorAll('.reaction-button').forEach(button => {
+                button.addEventListener('click', (event) => {
+                  event.preventDefault(); // Prevents the fancybox from opening
+                  const reaction = event.currentTarget.dataset.reaction;
 
-    let message = '';
-    if (reaction === 'heart') {
-        message = '💜 Nestled with love';
-    } else if (reaction === 'save') {
-        message = '✨ Kept safe in your PixelNest';
-    } else if (reaction === 'share') {
-        message = '🌍 Shared to the world!';
-        // Simplified copy to clipboard logic for share button
-        const imageUrl = img.src;
-        const tempInput = document.createElement('input');
-        document.body.appendChild(tempInput);
-        tempInput.value = imageUrl;
-        tempInput.select();
-        document.execCommand('copy');
-        document.body.removeChild(tempInput);
-    }
+                  let message = '';
+                  if (reaction === 'heart') {
+                      message = '💜 Nestled with love';
+                  } else if (reaction === 'save') {
+                      message = '✨ Kept safe in your PixelNest';
+                  } else if (reaction === 'share') {
+                      message = '🌍 Shared to the world!';
+                      // Simplified copy to clipboard logic for share button
+                      const imageUrl = img.src;
+                      const tempInput = document.createElement('input');
+                      document.body.appendChild(tempInput);
+                      tempInput.value = imageUrl;
+                      tempInput.select();
+                      document.execCommand('copy');
+                      document.body.removeChild(tempInput);
+                  }
 
-    showMessage(message);
-  });
-});
-
-return galleryItem;
-
+                  showMessage(message);
+                });
+              });
+              return galleryItem;
             };
 
             // Function to create a simple custom message box
