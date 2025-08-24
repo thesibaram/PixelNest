@@ -122,6 +122,8 @@ body {
   text-align: left;
   color: #000; /* Black text for contrast */
   line-height: 1.2; /* Adjust line spacing for multi-line captions */
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 /* Dark mode adaptation */
@@ -129,6 +131,13 @@ body {
   .comic-caption {
     background: rgba(0, 0, 0, 1); /* Pure black */
     color: #fff; /* White text for contrast */
+  }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 480px) {
+  .comic-caption {
+    line-height: 1.08;
   }
 }
 
