@@ -1,70 +1,127 @@
 <div align="center">
 
-# PixelNest
+# 🌌✨ PixelNest ✨🌌  
 
-**A nest of pixels, storing my memories & moments.**
-
-</div>
+**“A nest of pixels, storing my memories & moments.”**  
 
 <p align="center">
-  <img src="https://placehold.co/1200x300/E0E7FF/4F46E5?text=PixelNest&font=lora" alt="PixelNest Banner">
+  <img src="https://placehold.co/1200x350/4F46E5/FFFFFF?text=PixelNest&font=raleway" alt="PixelNest Banner">
 </p>
 
-<div align="center">
+[![GitHub Pages](https://img.shields.io/badge/Live-Demo-4F46E5?style=for-the-badge&logo=github)](https://thesibaram.github.io/pixelnest/)
+[![HTML](https://img.shields.io/badge/HTML-5-orange?style=for-the-badge&logo=html5)](#)
+[![CSS](https://img.shields.io/badge/CSS-3-blue?style=for-the-badge&logo=css3)](#)
+[![Made With](https://img.shields.io/badge/Made_with-Love-red?style=for-the-badge&logo=heart)](#)
 
-· · ─────── ·𖥸· ─────── · ·
+---
+
+> *Where every pixel has a memory, every memory has a home.*  
+
+---
 
 </div>
 
-### 🌱 About PixelNest
+## 🌱 About PixelNest  
 
-PixelNest is a digital sanctuary—a personal archive where I gather and store the pixels of my life. It's a minimalist, lovingly crafted space for my photos, sketches, and cherished moments. Think of it as a cozy nest, built one memory at a time.
+PixelNest is not just a portfolio — it’s my **digital memory capsule**.  
+It’s where I gather **photos, sketches, and fragments of life** into one minimalist archive.  
 
-### 🚀 Features
+🕊️ Think of it as a **nest built out of pixels**, cozy and quiet.  
 
-- **Minimalist Design:** A clean, uncluttered interface that puts the focus on the content.
-- **Clean Navigation:** Effortlessly browse through memories and moments.
-- **Responsive Layout:** Looks beautiful on desktops, tablets, and phones.
-- **Image-Heavy:** Designed to be a visual diary.
+---
 
-### 🛠️ Tech Stack
+## 🎨 Design Philosophy  
 
-PixelNest is built with simplicity and performance in mind, using only the essential tools:
+- 🧩 **Minimalism** — let the visuals breathe.  
+- 🌸 **Pastel vibes** — soft, soothing gradients.  
+- 🌀 **Focus** — zero clutter, only memories.  
+- 🔲 **Grid balance** — sharp lines, clean layout.  
 
-- **HTML5**
-- **CSS3**
-- **Hosted on GitHub Pages**
+---
 
-### 📸 Screenshots
+## 🚀 Features  
 
-Here’s a sneak peek into the world of PixelNest.
+✨ **Minimalist UI** → clean, content-focused.  
+🖼️ **Gallery-First** → every image tells a story.  
+📱 **Fully Responsive** → looks great everywhere.  
+⚡ **Super Lightweight** → no frameworks, no bloat.  
+🎭 **Creative Identity** → a personal brand archive.  
 
-*(More screenshots coming soon!)*
+---
+
+## 🛠️ Tech Stack  
 
 <p align="center">
-  <img src="https://placehold.co/600x400/E0E7FF/4F46E5?text=Screenshot+1" alt="Screenshot 1" width="48%">
+  <img src="https://skillicons.dev/icons?i=html,css,github" height="50">
+</p>
+
+- ⚡ **HTML5** — structure.  
+- 🎨 **CSS3** — style & gradients.  
+- 🌐 **GitHub Pages** — free hosting.  
+
+---
+
+## 📸 Gallery & Screenshots  
+
+<p align="center">
+  <img src="https://placehold.co/500x300/93C5FD/1E3A8A?text=Screenshot+1" width="45%">
   &nbsp;
-  <img src="https://placehold.co/600x400/E0E7FF/4F46E5?text=Screenshot+2" alt="Screenshot 2" width="48%">
+  <img src="https://placehold.co/500x300/FBCFE8/831843?text=Screenshot+2" width="45%">
 </p>
 
-### 🌐 Live Site
+🎥 *Soon: Videos + interactive previews.*  
 
-You can visit the live version of PixelNest here:
+---
 
-[**https://thesibaram.github.io/pixelnest/**](https://thesibaram.github.io/pixelnest/)
+## 🌐 Live Demo  
 
-### 📬 Contact
+🔗 Visit here → [**PixelNest Live**](https://thesibaram.github.io/pixelnest/)  
 
-Have questions, ideas, or just want to say hello?
+---
 
-Feel free to reach out at [**hello.pxlnest@gmail.com**](mailto:hello.pxlnest@gmail.com).
+## 💡 Future Plans  
+
+- 🖼️ Add **animated doodles**.  
+- 🗂️ Expand into a **memory timeline**.  
+- 🎶 Background music for **mood-based galleries**.  
+- 🌍 Multi-language support.  
+
+---
+
+## 🖌️ Creative Extras  
+
+🎨 ASCII Nest  
+   \     /
+  -- nest --
+   /     \
+
+✨ Gradient palettes (PixelNest style):  
+- Pastel Blue → `#93C5FD`  
+- Lavender → `#E9D5FF`  
+- Blush → `#FBCFE8`  
+- Midnight → `#1E3A8A`  
+
+---
+
+## 📬 Contact  
+
+📧 Email → [hello.pxlnest@gmail.com](mailto:hello.pxlnest@gmail.com)  
+📸 Instagram → [@mypxlnest](https://instagram.com/mypxlnest)  
+🌐 Website → [PixelNest](https://thesibaram.github.io/pixelnest/)  
+
+---
 
 <div align="center">
 
-· · ─────── ·𖥸· ─────── · ·
+· · ─────── ·𖥸· ─────── · ·  
+
+✨ *Built with love, pixels, and memories.* ✨  
+
+<p>
+  <img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" height="30">
+  <img src="https://forthebadge.com/images/badges/made-with-markdown.svg" height="30">
+</p>
 
 </div>
 
-<p align="center">
-  ✨ Built with love, memories, and pixels. ✨
-</p>
+
