@@ -111,6 +111,104 @@ body {
   display: block;
 }
 
+/* System-adaptive comic caption (only what you asked) */
+:root {
+  --comic-bg: rgba(255, 255, 255, 0.85);  /* light mode background */
+  --comic-text: #111;                     /* light mode text */
+  --comic-border-color: #111;             /* light mode border */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --comic-bg: #111;       /* dark mode background */
+    --comic-text: #f2f2f2;                /* dark mode text */
+    --comic-border-color: #ffffff;           /* dark mode border */
+  }
+}
+
+/* Caption and button positioning to fix overlap */
+.comic-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--comic-bg);
+  color: var(--comic-text);
+  font-family: 'Freeman', sans-serif;
+  text-align: left;                       /* left aligned as requested */
+  border-top: 2px solid var(--comic-border-color);
+  padding: 10px;
+}
+
+
+
+/* Updated reaction section with comic-style buttons */
+.reaction-buttons {
+  position: absolute;
+  top: 10px; /* Position buttons at the top right */
+  right: 10px;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 8px;
+  z-index: 10;
+}
+
+.reaction-button {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px var(--comic-shadow-color);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.reaction-button:hover {
+  transform: scale(1.1);
+  box-shadow: 6px 6px 0px var(--comic-shadow-color);
+  background-color: var(--accent-color);
+}
+
+/* General message box styles for a comic look */
+.message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 20px 40px;
+    border-radius: 15px;
+    z-index: 1000;
+    font-family: 'Big Shoulders Inline Display', cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    border: 4px solid var(--primary-color);
+    box-shadow: 8px 8px 0px var(--comic-shadow-color);
+    animation: bounce-in 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.message-box.fade-out {
+  animation: fade-out 0.5s forwards;
+}
+
+@keyframes bounce-in {
+  0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+  60% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes fade-out {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
 /* --- FOOTER SECTION - UNIFIED FOR ALL THEMES --- */
 footer {
   background-color: var(--footer-bg);
