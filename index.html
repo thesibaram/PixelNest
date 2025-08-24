@@ -19,13 +19,13 @@
   <meta property="og:title" content="PixelNest — Portfolio">
   <meta property="og:description" content="A creative portfolio showcasing the work and vision behind PixelNest.">
   <meta property="og:url" content="https://thesibaram.github.io/pixelnest/index.html">
-  <meta property="og:image" content="assets/images/pixelnest-social-preview.jpg">
+  <meta property="og:image" content="https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PixelNest — Portfolio">
   <meta name="twitter:description" content="A creative portfolio showcasing the work and vision behind PixelNest.">
-  <meta name="twitter:image" content="assets/images/pixelnest-social-preview.jpg">
+  <meta name="twitter:image" content="https://thesibaram.github.io/pixelnest/assets/images/Avatar.jpg">
 </head>
 
 <body class="bg-white dark:bg-black text-black dark:text-white px-5 md:px-20 animate-fade-in">
@@ -154,7 +154,7 @@
     </footer>
 
   <!-- Script to dynamically generate images and handle the lightbox -->
-<script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const gallery = document.getElementById('masonry-gallery');
 
@@ -249,9 +249,15 @@
               const reactionContainer = document.createElement('div');
               reactionContainer.className = 'reaction-buttons';
               reactionContainer.innerHTML = `
-                <button class="reaction-button heart" data-reaction="heart">❤️</button>
-                <button class="reaction-button save" data-reaction="save">💾</button>
-                <button class="reaction-button share" data-reaction="share">🔗</button>
+                <button class="reaction-button heart" data-reaction="heart">
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+                <button class="reaction-button save" data-reaction="save">
+                  <i class="fa-solid fa-bookmark"></i>
+                </button>
+                <button class="reaction-button share" data-reaction="share">
+                  <i class="fa-solid fa-share-nodes"></i>
+                </button>
               `;
 
               link.appendChild(img);
@@ -260,32 +266,34 @@
               galleryItem.appendChild(reactionContainer);
 
               // Add event listeners for the new buttons
-              reactionContainer.querySelectorAll('.reaction-button').forEach(button => {
-                button.addEventListener('click', (event) => {
-                  event.preventDefault(); // Prevents the fancybox from opening
-                  const reaction = event.currentTarget.dataset.reaction;
+reactionContainer.querySelectorAll('.reaction-button').forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevents the fancybox from opening
+    const reaction = event.currentTarget.dataset.reaction;
 
-                  let message = '';
-                  if (reaction === 'heart') {
-                      message = 'You reacted to this!';
-                  } else if (reaction === 'save') {
-                      message = 'Image saved!';
-                  } else if (reaction === 'share') {
-                      const imageUrl = window.location.origin + '/' + item.path;
-                      navigator.clipboard.writeText(imageUrl).then(() => {
-                        showMessage('Link copied to clipboard!');
-                      }).catch(err => {
-                        console.error('Failed to copy: ', err);
-                        showMessage('Failed to copy link.');
-                      });
-                      return; // Don't show a message here, it's handled in the promise
-                  }
+    let message = '';
+    if (reaction === 'heart') {
+        message = '💜 Nestled with love';
+    } else if (reaction === 'save') {
+        message = '✨ Kept safe in your PixelNest';
+    } else if (reaction === 'share') {
+        message = '🌍 Shared to the world!';
+        // Simplified copy to clipboard logic for share button
+        const imageUrl = img.src;
+        const tempInput = document.createElement('input');
+        document.body.appendChild(tempInput);
+        tempInput.value = imageUrl;
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+    }
 
-                  showMessage(message);
-                });
-              });
+    showMessage(message);
+  });
+});
 
-              return galleryItem;
+return galleryItem;
+
             };
 
             // Function to create a simple custom message box
